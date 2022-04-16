@@ -8,6 +8,9 @@ const logger = require("morgan");
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
+//Connect To Database
+connectDB();
+
 //Using EJS for views
 app.set("view engine", "ejs");
 
