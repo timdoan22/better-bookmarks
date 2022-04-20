@@ -8,6 +8,9 @@ const logger = require("morgan");
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
+// Passport config
+require("./config/passport")(passport);
+
 //Connect To Database
 connectDB();
 
