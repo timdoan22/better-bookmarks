@@ -29,4 +29,24 @@ exports.postLogin = (req, res, next) => {
   req.body.email = validator.normalizeEmail(req.body.email, {
     gmail_remove_dots: false,
   });
-}
+  passport.authenticate("local", (err, user, info) => {
+    if (err) {
+      return next(err);
+    }
+    // otherwise redirect the user back to the /login route
+    if (!user) {
+      req.flash("errors", info);
+      return res.redirect("/login");
+    }
+    // proceed to the errors if login was not successful
+    req.logIn(user, (err) => {
+      if (err) {
+        return next(err);
+      }
+      // flash message if the signup/login is successful 
+      // redirect the user to the profile route
+      req.flash("success", { msg: "Success! You are logged in." });
+      res.redirect(req.session.returnTo || "/profile");
+    });
+  })(req, res, next);
+};
