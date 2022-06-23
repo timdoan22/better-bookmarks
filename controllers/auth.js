@@ -49,4 +49,16 @@ exports.postLogin = (req, res, next) => {
       res.redirect(req.session.returnTo || "/profile");
     });
   })(req, res, next);
+
+
+  // sign up check
+exports.getSignup = (req, res) => {
+  // if the user already has an account redirect them back to the /profile route
+  if (req.user) {
+    return res.redirect("/profile");
+  }
+  res.render("signup", {
+    title: "Create Account",
+  });
+  };
 };
