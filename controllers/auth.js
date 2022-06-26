@@ -61,4 +61,11 @@ exports.getSignup = (req, res) => {
     title: "Create Account",
   });
   };
+
+// schema model for the user document to save into the database
+const user = new User({
+  userName: req.body.userName,
+  email: req.body.email,
+  password: req.body.password,
+});
 };
