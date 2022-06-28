@@ -29,6 +29,7 @@ exports.postLogin = (req, res, next) => {
   req.body.email = validator.normalizeEmail(req.body.email, {
     gmail_remove_dots: false,
   });
+  // proceed to the next step for authentication
   passport.authenticate("local", (err, user, info) => {
     if (err) {
       return next(err);
@@ -49,9 +50,22 @@ exports.postLogin = (req, res, next) => {
       res.redirect(req.session.returnTo || "/profile");
     });
   })(req, res, next);
+};
 
+// logout function
+exports.logout = (req, res) => {
+  req.logout(() => {
+    console.log('User has logged out.')
+  })
+  req.session.destroy((err) => {
+    if (err)
+      console.log("Error : Failed to destroy the session during logout.", err);
+    req.user = null;
+    res.redirect("/");
+  });
+};
 
-  // sign up check
+// sign up check
 exports.getSignup = (req, res) => {
   // if the user already has an account redirect them back to the /profile route
   if (req.user) {
@@ -60,9 +74,9 @@ exports.getSignup = (req, res) => {
   res.render("signup", {
     title: "Create Account",
   });
-  };
+};
 
-  // sign up logic
+// sign up logic
 exports.postSignup = (req, res, next) => {
   // validators for email and password data
   const validationErrors = [];
@@ -84,10 +98,40 @@ exports.postSignup = (req, res, next) => {
     gmail_remove_dots: false,
   });
 
-// schema model for the user document to save into the database
-const user = new User({
-  userName: req.body.userName,
-  email: req.body.email,
-  password: req.body.password,
-});
+  // schema model for the user document to save into the database
+  const user = new User({
+    userName: req.body.userName,
+    email: req.body.email,
+    password: req.body.password,
+  });
+
+  User.findOne(
+    // return the next steps if errors relating to the user sign up come up
+    { $or: [{ email: req.body.email }, { userName: req.body.userName }] },
+    (err, existingUser) => {
+      if (err) {
+        return next(err);
+      }
+      // if the user already exists, flash an error
+      if (existingUser) {
+        req.flash("errors", {
+          msg: "Account with that email address or username already exists.",
+        });
+        return res.redirect("../signup");
+      }
+      // save the user data into the database
+      user.save((err) => {
+        if (err) {
+          return next(err);
+        }
+        req.logIn(user, (err) => {
+          if (err) {
+            return next(err);
+          }
+          // redirect the user back to the /profile route
+          res.redirect("/profile");
+        });
+      });
+    }
+  );
 };
