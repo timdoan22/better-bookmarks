@@ -1,0 +1,34 @@
+<%- include('partials/header') -%>
+<%- include('partials/navbar') -%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          <div class="mt-5">
+            <h2>Add a bookmark</h2>
+            <form action="/bookmark/createBookmark" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="title" name="title">
+              </div>
+              <div class="mb-3">
+                <label for="link" class="form-label">URL</label>
+                <input type="text" class="form-control" id="link" name="link">
+              </div>
+              <div class="mb-3">
+                <label for="caption" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              </div>
+              <div class="col-4">
+                <button type="submit" class="btn btn-primary submit-button" value="Upload">Submit</button>
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>
