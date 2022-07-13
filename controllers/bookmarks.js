@@ -14,4 +14,16 @@ module.exports = {
       console.log(err);
     }
   },
+  getFeed: async (req, res) => {
+    try {
+      // retieve all the posts in the db
+      const bookmarks = await Bookmark.find().sort({ createdAt: "desc" }).lean();
+      const users = await User.find();
+      // render the template and pass in the all posts data
+      res.render("feed.ejs", { bookmarks: bookmarks, user: req.user, users: users });
+      console.log(users)
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
