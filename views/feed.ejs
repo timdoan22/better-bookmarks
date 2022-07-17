@@ -9,6 +9,9 @@
             <a href="/bookmark/<%= bookmarks[i]._id%>">
                 <img class="rounded-t-lg h-50 w-30" src="<%= bookmarks[i].image%>" alt="" />
             </a>
+            <div>
+              <%= bookmarks[i].likes%>
+            </div>
             <div class="p-5">
                 <a href="<%= bookmarks[i].link%>">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-navy-900 dark:text-white"><%= bookmarks[i].title%></h5>
