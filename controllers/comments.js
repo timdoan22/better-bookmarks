@@ -16,4 +16,20 @@ module.exports = {
       console.log(err);
     }
   },
+  likeComment: async (req, res) => {
+    try {
+      // Update the like counter by one
+      await Comment.findOneAndUpdate(
+        { _id: req.params.commentid },
+        {
+          $inc: { likes: 1 },
+        }
+      );
+      console.log("Comment likes +1");
+      // return the user to the same post page
+      res.redirect("/bookmark/"+req.params.postid);
+    } catch (err) {
+      console.log(err);
+    }
+  },
 }
