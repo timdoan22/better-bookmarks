@@ -32,4 +32,14 @@ module.exports = {
       console.log(err);
     }
   },
+  deleteComment: async (req, res) => {
+    try {
+      // Delete comment from db
+      await Comment.deleteOne({ _id: req.params.commentid });
+      console.log("Deleted Comment");
+      res.redirect("/bookmark/"+req.params.postid);
+    } catch (err) {
+      res.redirect("/bookmark/"+req.params.postid);
+    }
+  },
 }
