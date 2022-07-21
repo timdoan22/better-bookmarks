@@ -26,4 +26,16 @@ module.exports = {
       console.log(err);
     }
   },
+  getBookmark: async (req, res) => {
+    try {
+      // retrieve specific post in db based on the post id
+      const bookmark = await Bookmark.findById(req.params.id);
+      // retrieve comments tied to the specific post
+      const comments = await Comment.find({post: req.params.id}).sort({ createdAt: "desc" }).lean();
+
+      res.render("post.ejs", { bookmark: bookmark, user: req.user, comments: comments });
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
