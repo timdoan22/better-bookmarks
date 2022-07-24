@@ -28,6 +28,20 @@
       </div>
     </div>
     <div class="mt-5 col-8">
+      <%if(bookmark.user == user.id){ %>
+        <form
+          action="/bookmark/deleteBookmark/<%= bookmark._id %>?_method=DELETE"
+          method="POST"
+          class="col-3"
+        >
+          <button class="btn btn-primary fa fa-trash trash-button" type="submit"></button>
+        </form>
+        <%}%>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mt-5 col-8">
       <!-- comment form -->
   </div>
 </div>
