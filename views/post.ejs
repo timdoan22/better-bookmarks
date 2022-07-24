@@ -1,0 +1,35 @@
+<%- include('partials/header') -%>
+<%- include('partials/navbar') -%>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-6">
+      <div class="card text-center">
+        <div class="card-header">
+          <a href="<%= bookmark.link %>"><h1 id="post-title"><%= bookmark.title %></h1></a>
+        </div>
+        <div class="card-body">
+          <img class="img-fluid" src="<%= bookmark.image%>" />
+          <br>
+          <p class="card-text"><%= bookmark.description %></p>
+          <br>
+          <a href="<%= bookmark.link %>" class="btn btn-primary">Visit Site</a>
+        </div>
+        <div class="card-footer text-muted">
+          <div class="row justify-content-between">
+            <!-- form to submit a update/put request on the post likes -->
+            <form
+              class="col-1"
+              action="/bookmark/likeBookmark/<%= bookmark._id %>?_method=PUT"
+              method="POST"
+            >
+              <button class="btn btn-primary fa fa-heart heart-button" type="submit"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 col-8">
+      <!-- comment form -->
+  </div>
+</div>
+<!-- import footer partials -->
+<%- include('partials/footer') -%>
