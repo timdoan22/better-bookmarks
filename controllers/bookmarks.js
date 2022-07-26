@@ -38,4 +38,11 @@ module.exports = {
       console.log(err);
     }
   },
+  getNewPost: async (req, res) => {
+    try {
+      res.render("new_post.ejs", { user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
