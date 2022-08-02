@@ -45,4 +45,24 @@ module.exports = {
       console.log(err);
     }
   },
+  createBookmark: async (req, res) => {
+    try {
+      // Upload image to cloudinary
+      const result = await cloudinary.uploader.upload(req.file.path);
+      await Bookmark.create({
+        title: req.body.title,
+        link: req.body.link,
+        image: result.secure_url,
+        cloudinaryId: result.public_id,
+        description: req.body.description,
+        likes: 0,
+        user: req.user.id,
+        userName: req.user.userName,
+      });
+      console.log("Bookmark has been added!");
+      res.redirect("/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
