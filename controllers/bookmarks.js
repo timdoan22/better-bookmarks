@@ -65,4 +65,20 @@ module.exports = {
       console.log(err);
     }
   },
+  likeBookmark: async (req, res) => {
+    try {
+      // Update the like counter by one
+      await Bookmark.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $inc: { likes: 1 },
+        }
+      );
+      console.log("Likes +1");
+      // return the user to the same post page
+      res.redirect(`/bookmark/${req.params.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
