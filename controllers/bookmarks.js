@@ -33,6 +33,8 @@ module.exports = {
       // retrieve comments tied to the specific post
       const comments = await Comment.find({post: req.params.id}).sort({ createdAt: "desc" }).lean();
 
+      // const userName = await User.findById(req.params.id);
+      // render template and pass in the specific post data and user data
       res.render("post.ejs", { bookmark: bookmark, user: req.user, comments: comments });
     } catch (err) {
       console.log(err);
@@ -49,6 +51,7 @@ module.exports = {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
+      
       await Bookmark.create({
         title: req.body.title,
         link: req.body.link,
@@ -79,6 +82,20 @@ module.exports = {
       res.redirect(`/bookmark/${req.params.id}`);
     } catch (err) {
       console.log(err);
+    }
+  },
+  deleteBookmark: async (req, res) => {
+    try {
+      // Find the specific post by id
+      let bookmark = await Bookmark.findById({ _id: req.params.id });
+      // Delete image from cloudinary
+      await cloudinary.uploader.destroy(bookmark.cloudinaryId);
+      // Delete post from db
+      await Bookmark.remove({ _id: req.params.id });
+      console.log("Deleted Post");
+      res.redirect("/profile");
+    } catch (err) {
+      res.redirect("/profile");
     }
   },
 };
