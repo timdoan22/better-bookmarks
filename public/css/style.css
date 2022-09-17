@@ -482,6 +482,7 @@ color:#000000;
         margin-left: 22%;
     }
     .feed-cards-child {
+        flex-basis: 100%;
         margin-left: 4%;
      }
     .main-profile-link {
@@ -505,7 +506,8 @@ color:#000000;
         margin-left: 10%;
     }
     .feed-cards-child {
-        margin-left: -2%;
+        flex-basis: 90%;
+        margin-left: -6%;
      }
      .main-profile-link {
         margin-left: -16%;
