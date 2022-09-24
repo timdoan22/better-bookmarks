@@ -10,20 +10,27 @@ body {
     font-style: normal;
     color: #121212; 
 }
+
 h1 {
     letter-spacing: -1px;
 }
+
 a {
     color: #5469d4;
     text-decoration: unset;
 }
+
 .login-title {
     flex-grow: 1; 
     z-index: 0;
 }
 
-.title-heading {
+.title-heading-login {
     margin: 10% 0 2% 0;
+}
+
+.title-heading-signup {
+    margin: 3% 0;
 }
 
 .notice-heading {
@@ -155,7 +162,7 @@ background-color: #ffffff;
     box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
 }
 
-span {
+.form-span {
     display: block;
     font-size: 20px;
     line-height: 28px;
