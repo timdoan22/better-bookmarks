@@ -6,7 +6,7 @@ Better Bookmarks
 
 An MVP version of a full stack app to allow users to share meaningful links related to programming resources. Built with Javascript, Node.JS, Express.JS, EJS and Tailwind CSS.
 
-### Executing program
+## Executing program
 
 * Install
 
@@ -29,8 +29,8 @@ An MVP version of a full stack app to allow users to share meaningful links rela
 
 `npm start`
 
-#### Optimizations
+## Optimizations
 
-*Add a favourite feature to save individual links to your profile
-*Improve layout design
-*Improve liking feature to allow only one like per user
+-Add a favourite feature to save individual links to your profile<br />
+-Improve layout design<br />
+-Improve liking feature to allow only one like per user
