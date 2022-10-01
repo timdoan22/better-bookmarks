@@ -1,10 +1,20 @@
-# Install
+# Project Title
+
+Better Bookmarks
+
+## Description
+
+An MVP version of a full stack app to allow users to share meaningful links related to programming resources. Built with Javascript, Node.JS, Express.JS, EJS and Tailwind CSS.
+
+### Executing program
+
+* Install
 
 `npm install`
 
 ---
 
-# Things to add
+* Things to add
 
 - Create a `.env` file in config folder and add the following as `key = value`
   - PORT = 2121 (can be any port example: 3000)
@@ -15,6 +25,12 @@
 
 ---
 
-# Run
+* Run
 
 `npm start`
+
+# Optimizations
+
+-Add a favourite feature to save individual links to your profile
+-Improve layout design
+-Improve liking feature to allow only one like per user
