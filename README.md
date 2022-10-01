@@ -31,6 +31,6 @@ An MVP version of a full stack app to allow users to share meaningful links rela
 
 # Optimizations
 
--Add a favourite feature to save individual links to your profile
--Improve layout design
--Improve liking feature to allow only one like per user
+*Add a favourite feature to save individual links to your profile
+*Improve layout design
+*Improve liking feature to allow only one like per user
