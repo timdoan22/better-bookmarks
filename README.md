@@ -29,7 +29,7 @@ An MVP version of a full stack app to allow users to share meaningful links rela
 
 `npm start`
 
-# Optimizations
+#### Optimizations
 
 *Add a favourite feature to save individual links to your profile
 *Improve layout design
