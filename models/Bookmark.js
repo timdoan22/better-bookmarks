@@ -20,6 +20,12 @@ const BookmarkSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  hasVoted: {
+    type: Array,
+  },
+  usersFavourites: {
+    type: Array,
+  },
   likes: {
     type: Number,
     required: true,

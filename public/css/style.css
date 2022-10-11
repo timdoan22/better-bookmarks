@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#dashboard-nav {
+    font-size: large;
+    font-weight: bolder;
+}
+
+#dashboard-nav:hover {
+    color: #2155CD;
+}
+
+#post-title {
+    font-size: x-large;
+    font-weight: 800;
+}
+
+#submit-comment {
+    background-color: #2155CD;
+    font-size: small;
+}
+
+#submit-comment:hover {
+    background-color: #000000;
+    font-size: small;
+}
+
+.comment-box {
+    margin: -2% 0 4% 48%;
+}
+
+.comment-interact * {
+    display: inline-block;
+    margin: 0 0 1% 2%;
+}
+
+.delete-button {
+    font-size: x-small;
+    font-weight: 600;
+    color: white;
+    background-color: #F96666;
+    margin-left: 40%;
+}
+
+.heart-button, .trash-button, .fa-bookmark, .unbookmark {
+    background-color: #2155CD;
+}
+
+.heart-button:hover, .trash-button:hover, .fa-bookmark:hover, .unbookmark:hover {
+    background-color: #000000;
+}
+
+.unbookmark {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.submit-button {
+    width: 96%;
+    background-color: #2155CD;
+}
+
+.submit-button:hover{
+    background-color: #000000;
+}
+
+.new-bookmark-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.username {
+    font-weight: bold;
+    font-size: large;
+}
+
+.author {
+    text-align: center;
+    margin-bottom: 6%;
+}
+
+.button-links {
+    display: flex;
+    margin: -7% 0 4% -7%;
+}
+
+.container-feed {
+    margin-bottom: 10%;
+}
+
+.favourites-btn {
+    margin: -13% 0% 10% 95.4%;
+}
+
+.feed-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left: 12%;
+}
+
+.liked-heart {
+    background-color: #000000;
+}
+
+.likes-text {
+    margin-left: 8%;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.post-delete {
+    margin: -4% 0% 0 82%;
+}
+
+.post-image {
+    height: 300px;
+    width: 720px;
+}
+
+.post-likes {
+    margin-right: 38%;
+    
+}
+
+.likes-comment-post {
+    margin-left: -9%;
+    font-size: small;
+}
+
+.likes-text-post {
+    font-size: small;
+    font-weight: 700;
+}
+
+.comment-delete-btn {
+    margin-left: 50%;
+}
+
+.profile-cards {
+    margin: 4% 0 0 16%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.profile-image {
+    height: 200px;
+    width: 384px;
+}
+
+.profile-links {
+    display: flex;
+    margin-left: 20%;
+    padding: 0 10%;
+    width: 120%;
+    font-weight: bolder;
+}
+
+.profile-span {
+    margin: 0 2%;
+}
+
+.main-profile-link {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1536px) {
+    .feed-cards-child {
+       flex-basis: 38%;
+       margin-left: 2%;
+    }
+    .post-delete {
+        margin: -4.8% 0% 0 82%;
+    }
+    .comment-delete-btn {
+        margin-left: 46%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .feed-cards-child {
+       flex-basis: 100%;
+       margin-left: 12%;
+    }
+}
+
+@media (max-width: 1280px) and (min-width: 1024px) {
+    .post-delete {
+        margin: -6% 0% 0 80%;
+    }
+    .comment-delete-btn {
+        margin-left: 40%;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .post-delete {
+        margin: -8.2% 0% 0 76%;
+    }
+    .comment-delete-btn {
+        margin-left: 30%;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 640px) {
+    .post-delete {
+        margin: -10% 0% 0 74%;
+    }
+    .likes-text-post {
+        font-size: 12px;
+    }
+    .comment-delete-btn {
+        margin-left: 22%;
+    }
+    .feed-cards-child {
+        margin-left: 4%;
+     }
+}
+
+@media (max-width: 640px) and (min-width: 400px) {
+    .post-delete {
+        margin: -14% 0% 0 72%;
+    }
+    .likes-text-post {
+        font-size: 12px;
+        margin-left: -60%;
+    }
+    .comment-delete-btn {
+        margin-left: 10%;
+    }
+    .feed-cards-child {
+        margin-left: -2%;
+     }
+}

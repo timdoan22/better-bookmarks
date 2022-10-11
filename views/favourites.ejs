@@ -1,0 +1,37 @@
+<%- include('partials/header') -%>
+<%- include('partials/navbar') -%>
+<div class="container">
+    <div class="col-6 mt-10 profile-links">
+        <a href="/profile"><h2>My Posts</h2></a>
+        <span class="profile-span">|</span>
+        <h2 class="main-profile-link">Favourites</h2>
+        <span class="profile-span">|</span>
+        <a href="/new_post"><h2>New Bookmark</h2></a>
+    </div>
+
+  <!-- display all the posts belonging to the user -->
+  <div class="col-12 profile-cards">
+    <% for(var i=0; i<bookmarks.length; i++) {%>
+        <div class="col-4 mt-10">
+          <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <a href="/bookmark/<%= bookmarks[i]._id%>"><img class="profile-image" src="<%= bookmarks[i].image%>" alt=""></a>
+            <div class="px-6 py-4">
+              <a href="<%= bookmarks[i].link%>"><div class="font-bold text-xl mb-2 text-center"><%= bookmarks[i].title%></div></a>
+            </div>
+            <div>
+              <form
+              class="col-1"
+              action="/bookmark/favouriteBookmark/<%= bookmarks[i]._id %>?_method=PUT"
+              method="POST"
+              >
+                <button class="btn btn-primary unbookmark">Unbookmark</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    <% } %>
+  </div>
+</div>
+  
+<%- include('partials/footer') -%>
+

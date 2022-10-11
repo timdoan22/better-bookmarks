@@ -58,6 +58,7 @@ module.exports = {
         image: result.secure_url,
         cloudinaryId: result.public_id,
         description: req.body.description,
+        hasVoted: [],
         likes: 0,
         user: req.user.id,
         userName: req.user.userName,
@@ -70,16 +71,71 @@ module.exports = {
   },
   likeBookmark: async (req, res) => {
     try {
-      // Update the like counter by one
-      await Bookmark.findOneAndUpdate(
-        { _id: req.params.id },
-        {
-          $inc: { likes: 1 },
-        }
-      );
-      console.log("Likes +1");
+      const user = req.user.id
+      const bookmark = await Bookmark.findById(req.params.id);
+      const hasVotedArr = bookmark.hasVoted
+  
+      // Update the like counter by one if the user hasn't voted yet; 
+      // otherwise remove their like
+      if (hasVotedArr.includes(user)) {
+        await Bookmark.findOneAndUpdate(
+          { _id: req.params.id },
+          {
+            $pull: { hasVoted: user },
+            $inc: { likes: -1 },
+          }
+        );
+      } else {
+        await Bookmark.findOneAndUpdate(
+          { _id: req.params.id },
+          {
+            $push: { hasVoted: user },
+            $inc: { likes: 1 },
+          }
+        );
+      }
       // return the user to the same post page
-      res.redirect(`/bookmark/${req.params.id}`);
+      // res.redirect(`/bookmark/${req.params.id}`);
+      res.redirect('back');
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  favouriteBookmark: async (req, res) => {
+    try {
+      const user = req.user.id
+      const bookmark = await Bookmark.findById(req.params.id);
+      const usersFavouritesArr = bookmark.usersFavourites
+ 
+      // Update the like counter by one if the user hasn't voted yet; 
+      // otherwise remove their like
+      if (usersFavouritesArr.includes(user)) {
+        await Bookmark.findOneAndUpdate(
+          { _id: req.params.id },
+          {
+            $pull: { usersFavourites: user },
+          }
+        );
+      } else {
+        await Bookmark.findOneAndUpdate(
+          { _id: req.params.id },
+          {
+            $push: { usersFavourites: user },
+          }
+        );
+      }
+      // return the user to the same post page
+      // res.redirect(`/bookmark/${req.params.id}`);
+      res.redirect('back');
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getFavourites: async (req, res) => {
+    try {
+      const favouriteBookmarks = await Bookmark.find({ usersFavourites: req.user.id });
+ 
+      res.render("favourites.ejs", { bookmarks: favouriteBookmarks, user: req.user });
     } catch (err) {
       console.log(err);
     }
