@@ -1,6 +1,8 @@
 const LocalStrategy = require("passport-local").Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy
 const mongoose = require("mongoose");
 const User = require("../models/User");
+
 
 // passport local strategy logic for signing up user
 module.exports = function (passport) {
@@ -31,12 +33,39 @@ module.exports = function (passport) {
       });
     })
   );
+  // passport Google Ouath
+  passport.use(
+    new GoogleStrategy({
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: '/google/callback',
+      userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
+  },
+  async (accessToken, refreshToken, email, done) => {
+      const newUser = {
+          userName: "gUsr" + email.name.givenName + email.name.familyName,
+          email: email.emails[0].value
+      }
+      
+      try {
+          let user = await User.findOne({ email: email.emails[0].value })
 
-  passport.serializeUser((user, done) => {
-    done(null, user.id);
-  });
+          if(user) {
+              done(null, user)
+          } else {
+              user = await User.create(newUser)
+              done(null, user)
+          }
+      } catch (err) {
+          console.error(err)
+      }
+  }))
 
-  passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => done(err, user));
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id, (err, user) => done(err, user));
   });
 };
