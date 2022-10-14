@@ -1,0 +1,516 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Smash - Bootstrap Template
+    Template URI: uideck.com
+    Author: UIdeck
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------*/
+/*===========================
+      01.COMMON css 
+===========================*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800");
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #121212; }
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+img {
+  max-width: 100%; }
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  text-decoration: none;
+  outline: none; }
+
+a:focus,
+a:hover {
+  text-decoration: none; }
+
+i,
+span,
+a {
+  display: inline-block; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #121212;
+  margin: 0px; }
+
+h1 {
+  font-size: 48px; }
+
+h2 {
+  font-size: 36px; }
+
+h3 {
+  font-size: 28px; }
+
+h4 {
+  font-size: 22px; }
+
+h5 {
+  font-size: 18px; }
+
+h6 {
+  font-size: 16px; }
+
+ul, ol {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none; }
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #121212;
+  margin: 0px; }
+
+.bg_cover {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%; }
+
+/*===== All Section Title Style =====*/
+.section-title .title {
+  font-size: 44px;
+  font-weight: 600;
+  color: #121212;
+  line-height: 55px; }
+  @media (max-width: 767px) {
+    .section-title .title {
+      font-size: 30px;
+      line-height: 35px; } }
+.section-title .text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #6c6c6c;
+  margin-top: 24px; }
+
+/*===========================
+    11.BUTTON css 
+===========================*/
+.buttons-title .title {
+  font-size: 36px;
+  line-height: 45px;
+  color: #6c6c6c; }
+  @media (max-width: 767px) {
+    .buttons-title .title {
+      font-size: 24px;
+      line-height: 35px; } }
+
+.main-btn {
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 2px solid transparent;
+  padding: 0 32px;
+  font-size: 16px;
+  line-height: 46px;
+  color: #0067f4;
+  cursor: pointer;
+  z-index: 5;
+  -webkit-transition: all 0.4s ease-out 0s;
+  -moz-transition: all 0.4s ease-out 0s;
+  -ms-transition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+  position: relative;
+  text-transform: uppercase; }
+  @media (max-width: 767px) {
+    .main-btn {
+      font-size: 14px;
+      padding: 0 20px;
+      line-height: 40px; } }
+
+/*===== Rounded Buttons =====*/
+.rounded-buttons ul li {
+  display: inline-block;
+  margin-left: 18px;
+  margin-top: 20px; }
+  @media (max-width: 767px) {
+    .rounded-buttons ul li {
+      margin-left: 0; } }
+  .rounded-buttons ul li:first-child {
+    margin-left: 0; }
+.rounded-buttons .main-btn {
+  border-radius: 50px; }
+.rounded-buttons .rounded-one {
+  border-color: #0067f4; }
+  .rounded-buttons .rounded-one:hover {
+    color: #0067f4;
+    background-color: rgba(0, 103, 244, 0.4); }
+.rounded-buttons .rounded-two {
+  color: #fff;
+  background-color: #0067f4;
+  border-color: #0067f4; }
+  .rounded-buttons .rounded-two:hover {
+    color: #0067f4;
+    background-color: transparent; }
+.rounded-buttons .rounded-three {
+  overflow: hidden;
+  line-height: 52px;
+  background: -webkit-linear-gradient(left, #0067f4 0%, #2bdbdc 50%, #0067f4 100%);
+  background: -o-linear-gradient(left, #0067f4 0%, #2bdbdc 50%, #0067f4 100%);
+  background: linear-gradient(to right, #0067f4 0%, #2bdbdc 50%, #0067f4 100%);
+  background-size: 200% auto;
+  color: #fff;
+  border: 0; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .rounded-buttons .rounded-three {
+      line-height: 44px; } }
+  @media (max-width: 767px) {
+    .rounded-buttons .rounded-three {
+      line-height: 44px; } }
+  .rounded-buttons .rounded-three:hover {
+    background-position: right center; }
+.rounded-buttons .rounded-four {
+  border-color: #0067f4;
+  padding-left: 60px; }
+  @media (max-width: 767px) {
+    .rounded-buttons .rounded-four {
+      padding-left: 40px; } }
+  .rounded-buttons .rounded-four span {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    overflow: hidden;
+    left: 30px;
+    line-height: normal; }
+    @media (max-width: 767px) {
+      .rounded-buttons .rounded-four span {
+        left: 15px; } }
+  .rounded-buttons .rounded-four:hover {
+    color: #0067f4;
+    background-color: rgba(0, 103, 244, 0.4); }
+    .rounded-buttons .rounded-four:hover i {
+      -webkit-animation: iconTranslateY 0.5s forwards;
+      -moz-animation: iconTranslateY 0.5s forwards;
+      -o-animation: iconTranslateY 0.5s forwards;
+      animation: iconTranslateY 0.5s forwards; }
+.rounded-buttons .rounded-five {
+  color: #fff;
+  background-color: #0067f4;
+  border-color: #0067f4;
+  padding-left: 60px; }
+  @media (max-width: 767px) {
+    .rounded-buttons .rounded-five {
+      padding-left: 40px; } }
+  .rounded-buttons .rounded-five span {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    overflow: hidden;
+    left: 30px;
+    line-height: normal; }
+    @media (max-width: 767px) {
+      .rounded-buttons .rounded-five span {
+        left: 15px; } }
+  .rounded-buttons .rounded-five:hover {
+    color: #0067f4;
+    background-color: transparent; }
+    .rounded-buttons .rounded-five:hover i {
+      -webkit-animation: iconTranslateY 0.5s forwards;
+      -moz-animation: iconTranslateY 0.5s forwards;
+      -o-animation: iconTranslateY 0.5s forwards;
+      animation: iconTranslateY 0.5s forwards; }
+.rounded-buttons .rounded-six {
+  padding-right: 60px;
+  overflow: hidden;
+  line-height: 52px;
+  background: -webkit-linear-gradient(left, #0067f4 0%, #2bdbdc 50%, #0067f4 100%);
+  background: -o-linear-gradient(left, #0067f4 0%, #2bdbdc 50%, #0067f4 100%);
+  background: linear-gradient(to right, #0067f4 0%, #2bdbdc 50%, #0067f4 100%);
+  background-size: 200% auto;
+  color: #fff;
+  border: 0; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .rounded-buttons .rounded-six {
+      line-height: 44px; } }
+  @media (max-width: 767px) {
+    .rounded-buttons .rounded-six {
+      padding-right: 40px;
+      line-height: 44px; } }
+  .rounded-buttons .rounded-six span {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    overflow: hidden;
+    right: 30px;
+    line-height: normal; }
+    @media (max-width: 767px) {
+      .rounded-buttons .rounded-six span {
+        right: 15px; } }
+  .rounded-buttons .rounded-six:hover {
+    background-position: right center; }
+    .rounded-buttons .rounded-six:hover i {
+      -webkit-animation: iconTranslateY 0.5s forwards;
+      -moz-animation: iconTranslateY 0.5s forwards;
+      -o-animation: iconTranslateY 0.5s forwards;
+      animation: iconTranslateY 0.5s forwards; }
+
+/*===========================
+       10.SLIDER css 
+===========================*/
+.carousel-item {
+  background-color: #0067f4;
+  position: relative; }
+  .carousel-item::before {
+    position: absolute;
+    content: '';
+    width: 33%;
+    height: 100%;
+    background: -webkit-linear-gradient(rgba(0, 103, 244, 0.3) 0%, rgba(43, 219, 220, 0.3) 100%);
+    background: -o-linear-gradient(rgba(0, 103, 244, 0.3) 0%, rgba(43, 219, 220, 0.3) 100%);
+    background: linear-gradient(rgba(0, 103, 244, 0.3) 0%, rgba(43, 219, 220, 0.3) 100%);
+    top: 0;
+    right: 15%;
+    -webkit-transform: skewX(20deg);
+    -moz-transform: skewX(20deg);
+    -ms-transform: skewX(20deg);
+    -o-transform: skewX(20deg);
+    transform: skewX(20deg); }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .carousel-item::before {
+        width: 40%; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .carousel-item::before {
+        width: 60%; } }
+    @media (max-width: 767px) {
+      .carousel-item::before {
+        width: 50%;
+        right: 45%; } }
+    @media only screen and (min-width: 576px) and (max-width: 767px) {
+      .carousel-item::before {
+        right: 25%; } }
+  .carousel-item .slider-image-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 9; }
+    .carousel-item .slider-image-box .slider-image {
+      max-width: 680px;
+      width: 100%; }
+
+.slider-content {
+  position: relative;
+  z-index: 9;
+  padding-top: 240px;
+  padding-bottom: 200px; }
+  @media (max-width: 767px) {
+    .slider-content {
+      padding-top: 190px;
+      padding-bottom: 150px; } }
+  .slider-content .title {
+    font-size: 88px;
+    line-height: 96px;
+    color: #fff;
+    font-weight: 700; }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .slider-content .title {
+        font-size: 58px;
+        line-height: 80px; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .slider-content .title {
+        font-size: 72px;
+        line-height: 90px; } }
+    @media (max-width: 767px) {
+      .slider-content .title {
+        font-size: 34px;
+        line-height: 45px; } }
+  .slider-content .text {
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px; }
+  .slider-content .slider-btn {
+    padding-top: 16px; }
+    .slider-content .slider-btn li {
+      display: inline-block;
+      margin: 16px 8px 0; }
+      @media (max-width: 767px) {
+        .slider-content .slider-btn li {
+          margin: 16px 3px 0; } }
+      .slider-content .slider-btn li a.rounded-one {
+        background-color: #fff;
+        border-color: #fff; }
+        .slider-content .slider-btn li a.rounded-one:hover {
+          background-color: transparent;
+          color: #fff; }
+      .slider-content .slider-btn li a.rounded-two {
+        border-color: #fff; }
+        .slider-content .slider-btn li a.rounded-two:hover {
+          background-color: #fff;
+          color: #0067f4; }
+
+.carousel-indicators {
+  margin-bottom: 50px; }
+  .carousel-indicators li {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    border: 0;
+    margin: 0px 2px; }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .carousel-indicators li {
+        width: 13px;
+        height: 13px; } }
+    @media (max-width: 767px) {
+      .carousel-indicators li {
+        width: 13px;
+        height: 13px; } }
+    .carousel-indicators li.active {
+      background-color: #fff;
+      width: 16px;
+      border-radius: 50px; }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .carousel-indicators li.active {
+          width: 23px; } }
+      @media (max-width: 767px) {
+        .carousel-indicators li.active {
+          width: 23px; } }
+
+.carousel .carousel-control-prev, .carousel .carousel-control-next {
+  top: 50%;
+  font-size: 32px;
+  color: #fff;
+  bottom: auto;
+  left: 60px;
+  right: auto;
+  opacity: 1;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 99;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px; }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .carousel .carousel-control-prev, .carousel .carousel-control-next {
+      left: 30px; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .carousel .carousel-control-prev, .carousel .carousel-control-next {
+      display: none; } }
+  @media (max-width: 767px) {
+    .carousel .carousel-control-prev, .carousel .carousel-control-next {
+      display: none; } }
+.carousel .carousel-control-next {
+  right: 60px;
+  left: auto; }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .carousel .carousel-control-next {
+      right: 30px; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .carousel .carousel-control-next {
+      right: 30px; } }
+  @media (max-width: 767px) {
+    .carousel .carousel-control-next {
+      right: 30px; } }
+
+/*===========================
+      17.FEATURES css 
+===========================*/
+/*===== features TWO =====*/
+.features-area {
+  background-color: #f4f6f7;
+  padding-top: 120px;
+  padding-bottom: 130px; }
+
+.single-features {
+  padding: 40px 20px 52px;
+  background-color: #fff; }
+  .single-features .features-title-icon .features-title a {
+    font-size: 36px;
+    line-height: 45px;
+    color: #121212;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    font-weight: 400; }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .single-features .features-title-icon .features-title a {
+        font-size: 24px;
+        line-height: 35px; } }
+    @media (max-width: 767px) {
+      .single-features .features-title-icon .features-title a {
+        font-size: 24px;
+        line-height: 35px; } }
+    @media only screen and (min-width: 576px) and (max-width: 767px) {
+      .single-features .features-title-icon .features-title a {
+        font-size: 36px;
+        line-height: 45px; } }
+    .single-features .features-title-icon .features-title a:hover {
+      color: #0067f4; }
+  .single-features .features-title-icon .features-icon {
+    position: relative;
+    display: inline-block; }
+    .single-features .features-title-icon .features-icon i {
+      font-size: 88px;
+      line-height: 70px;
+      color: #0067f4;
+      position: relative;
+      z-index: 5; }
+    .single-features .features-title-icon .features-icon .shape {
+      position: absolute;
+      top: 0;
+      left: 0; }
+  .single-features .features-content .text {
+    font-size: 14px;
+    line-height: 20px;
+    color: #121212;
+    margin-top: 16px; }
+  .single-features .features-content .features-btn {
+    color: #0067f4;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 29px; }

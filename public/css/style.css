@@ -48,7 +48,6 @@
 }
 
 .heart-button:hover, .btn-like-clicked {
-    background-color: #000000;
     color:#F96666;
 }
 
@@ -56,6 +55,10 @@
 .fav-btn:hover, .btn-fav-clicked {
     color: #2155CD;
     background-color: #FFDE00;
+}
+
+.btn-like-clicked:hover {
+    color: #ffffff;
 }
 
 .unbookmark {
