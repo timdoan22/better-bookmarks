@@ -43,12 +43,19 @@
     margin-left: 40%;
 }
 
-.heart-button, .trash-button, .fa-bookmark, .unbookmark {
+.btn {
     background-color: #2155CD;
 }
 
-.heart-button:hover, .trash-button:hover, .fa-bookmark:hover, .unbookmark:hover {
+.heart-button:hover, .btn-like-clicked {
     background-color: #000000;
+    color:#F96666;
+}
+
+
+.fav-btn:hover, .btn-fav-clicked {
+    color: #2155CD;
+    background-color: #FFDE00;
 }
 
 .unbookmark {

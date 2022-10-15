@@ -22,7 +22,11 @@
               action="/bookmark/likeBookmark/<%= bookmark._id %>?_method=PUT"
               method="POST"
             >
-              <button class="btn btn-primary fa fa-heart heart-button" type="submit"></button>
+              <% if (bookmark.hasVoted.includes(user.id)) { %>
+                <button class="btn btn-primary fa fa-heart heart-button btn-like-clicked" btn-post-id="<%= bookmark._id %>" type="submit"></button>
+              <% } else { %>
+                <button class="btn btn-primary fa fa-heart heart-button" btn-post-id="<%= bookmark._id %>" type="submit"></button>
+              <% } %>
             </form>
             <!-- display the post likes data -->
             <div class="col-3 post-likes">
@@ -77,7 +81,11 @@
               action="/comment/likeComment/<%= bookmark._id %>/<%= 
               comments[i]._id %>?_method=PUT" method="POST"
               >
-                <button class="btn btn-primary fa fa-heart heart-button" type="submit"></button>
+                <% if (comments[i].hasVoted.includes(user.id)) { %>
+                  <button class="btn btn-primary fa fa-heart heart-button btn-like-clicked" btn-post-id="<%= bookmark._id %>" type="submit"></button>
+                <% } else { %>
+                  <button class="btn btn-primary fa fa-heart heart-button" btn-post-id="<%= bookmark._id %>" type="submit"></button>
+                <% } %>
               </form>
               <div class="col-3 comment-likes">
                 <% if(comments[i].likes < 1){ %>

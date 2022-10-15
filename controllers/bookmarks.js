@@ -74,7 +74,6 @@ module.exports = {
       const user = req.user.id
       const bookmark = await Bookmark.findById(req.params.id);
       const hasVotedArr = bookmark.hasVoted
-  
       // Update the like counter by one if the user hasn't voted yet; 
       // otherwise remove their like
       if (hasVotedArr.includes(user)) {

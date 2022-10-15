@@ -16,7 +16,11 @@
                             action="/bookmark/likeBookmark/<%= bookmarks[i]._id %>?_method=PUT"
                             method="POST"
                             >
-                              <button class="btn btn-primary fa fa-heart heart-button" type="submit"></button>
+                                <% if (bookmarks[i].hasVoted.includes(user.id)) { %>
+                                    <button class="btn btn-primary fa fa-heart heart-button btn-like-clicked" btn-post-id="<%= bookmarks[i]._id %>" type="submit"></button>
+                                <% } else { %>
+                                    <button class="btn btn-primary fa fa-heart heart-button" btn-post-id="<%= bookmarks[i]._id %>" type="submit"></button>
+                                <% } %>
                             </form>
                         </div>
                         <div>
@@ -33,7 +37,11 @@
                         action="/bookmark/favouriteBookmark/<%= bookmarks[i]._id %>?_method=PUT"
                         method="POST"
                         >
-                          <button class="btn btn-primary fa fa-bookmark"></button>
+                            <% if (bookmarks[i].usersFavourites.includes(user.id)) { %>
+                                <button class="btn btn-primary fa fa-bookmark btn-fav-clicked"></button>
+                            <% } else { %>
+                                <button class="btn btn-primary fa fa-bookmark fav-btn"></button>
+                            <% } %>
                         </form>
                     </div>
                     <a href="<%= bookmarks[i].link%>"><div class="font-bold text-xl mb-2 text-center"><%= bookmarks[i].title%></div></a>
