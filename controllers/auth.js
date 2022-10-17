@@ -47,7 +47,7 @@ exports.postLogin = (req, res, next) => {
       // flash message if the signup/login is successful 
       // redirect the user to the profile route
       req.flash("success", { msg: "Success! You are logged in." });
-      res.redirect(req.session.returnTo || "/profile");
+      res.redirect(req.session.returnTo || "/feed");
     });
   })(req, res, next);
 };
