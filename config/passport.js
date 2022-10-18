@@ -48,7 +48,7 @@ module.exports = function (passport) {
       }
       
       try {
-          let user = await User.findOne({ email: email.emails[0].value })
+          let user = await User.findOne({ userName: email.emails[0].value })
 
           if(user) {
               done(null, user)

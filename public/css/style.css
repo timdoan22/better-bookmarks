@@ -451,6 +451,12 @@ color:#000000;
        flex-basis: 100%;
        margin-left: 12%;
     }
+    .trash-button {
+        margin: 14% 0 0 38%;
+    }
+    .delete-button {
+        margin-left: 230%;
+    }
 }
 
 @media (max-width: 1280px) and (min-width: 1024px) {
@@ -460,6 +466,12 @@ color:#000000;
     .comment-delete-btn {
         margin-left: 40%;
     }
+    .trash-button {
+        margin: 0 0 0 8%;
+    }
+    .delete-button {
+        margin-left: 54%;
+    }
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
@@ -468,6 +480,16 @@ color:#000000;
     }
     .comment-delete-btn {
         margin-left: 30%;
+    }
+    .card {
+        width: 130%;
+        margin-left: -15%;
+    }
+    .trash-button {
+        margin: 8% 0 0 20%;
+    }
+    .delete-button {
+        margin-left: 126%;
     }
 }
 
@@ -492,6 +514,16 @@ color:#000000;
         flex-basis: 110%;
         margin-left: 4%;
     }
+    .card {
+        width: 130%;
+        margin-left: -15%;
+    }
+    .trash-button {
+        margin: 10% 0 0 20%;
+    }
+    .delete-button {
+        margin-left: 126%;
+    }
 }
 
 @media (max-width: 640px) and (min-width: 400px) {
@@ -514,6 +546,28 @@ color:#000000;
     }
      .profile-card {
         flex-basis: 70%;
+    }
+    .card {
+        width: 130%;
+        margin-left: -15%;
+    }
+    .trash-button {
+        margin: 20% 0 0 20%;
+    }
+    .delete-button {
+        margin-left: 140%;
+    }
+}
+
+@media (max-width: 530px) and (min-width: 455px) {
+    .delete-button {
+        margin-left: 100%;
+    }
+}
+
+@media (max-width: 454px) and (min-width: 400px) {
+    .delete-button {
+        margin-left: 76%;
     }
 }
 
