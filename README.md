@@ -4,7 +4,7 @@ Better Bookmarks
 
 ## Description
 
-![Project](https://s4.gifyu.com/images/bb_gif.gif)
+![Project](https://github.com/timdoan22/fullstack-app//public/imgs/bb_gif.gif)
 
 An MVP version of a full stack app to allow users to share meaningful links related to programming resources. Built with Javascript, Node.JS, Express.JS, EJS and Tailwind CSS.
 
