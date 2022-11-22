@@ -4,7 +4,9 @@ Better Bookmarks
 
 ## Description
 
-![Alt Text](https://s4.gifyu.com/images/bb_gif.gif)
+<p>
+    <img src="https://s4.gifyu.com/images/bb_gif.gi" width="220" height="240" />
+</p>
 
 An MVP version of a full stack app to allow users to share meaningful links related to programming resources. Built with Javascript, Node.JS, Express.JS, EJS and Tailwind CSS.
 
