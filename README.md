@@ -54,6 +54,10 @@ An MVP version of a full stack app to allow users to share meaningful links rela
 
 ## Optimizations
 
--Add a favourite feature to save individual links to your profile<br />
--Improve layout design<br />
--Improve liking feature to allow only one like per user
+-Sorting by total upvotes on home page
+-More appealing UI design
+
+## Checkout My Other Projects
+[Bill Tracker]
+[RenoDemo]
+
