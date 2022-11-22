@@ -4,6 +4,8 @@ Better Bookmarks
 
 ## Description
 
+![Better Bookmarks](https://s4.gifyu.com/images/bb_gif.gif)
+
 An MVP version of a full stack app to allow users to share meaningful links related to programming resources. Built with Javascript, Node.JS, Express.JS, EJS and Tailwind CSS.
 
 ## Packages
