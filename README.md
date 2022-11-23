@@ -60,7 +60,7 @@ An MVP version of a full stack app to allow users to share meaningful links rela
 ## Checkout My Other Projects
 [Bill Tracker](https://github.com/timdoan22/todo-mvc-auth-local)    
 
- [RenoDemo](https://github.com/timdoan22/portfolio-projects/tree/main/renodemo)  
- 
- [Landing Page](https://xyzlanding.netlify.app/)
+[RenoDemo](https://github.com/timdoan22/portfolio-projects/tree/main/renodemo)  
+
+[Landing Page](https://xyzlanding.netlify.app/)
 
